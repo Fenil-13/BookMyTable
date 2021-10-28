@@ -1,7 +1,6 @@
 package com.digitalgenius.api.models.responses
 
 
-import com.digitalgenius.api.models.entities.UserData
 import com.google.gson.annotations.SerializedName
 
 data class LoginUserResponse(
