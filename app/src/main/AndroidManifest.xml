@@ -8,17 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.BookMyTable">
+        android:theme="@style/Theme.BookMyTable"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activities.TableBookingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.RestaurantDetailsActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.SplashActivity"
-            android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".activities.HomeActivity"
-            android:exported="true"
-            android:label="@string/title_activity_home">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +26,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activities.HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home" />
+        <activity
             android:name=".activities.PhoneAuthActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".activities.SignActivity"
             android:exported="true" />

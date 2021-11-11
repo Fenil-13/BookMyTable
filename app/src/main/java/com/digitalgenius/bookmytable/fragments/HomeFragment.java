@@ -1,5 +1,6 @@
 package com.digitalgenius.bookmytable.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.digitalgenius.api.models.entities.RestaurantData;
+import com.digitalgenius.bookmytable.activities.RestaurantDetailsActivity;
 import com.digitalgenius.bookmytable.adapters.RestaurantAdapter;
+import com.digitalgenius.bookmytable.interfaces.RestaurantClickListener;
 import com.digitalgenius.bookmytable.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
@@ -41,7 +43,12 @@ public class HomeFragment extends Fragment {
     }
 
     private void setUpRecycleView() {
-        restaurantAdapter=new RestaurantAdapter(restaurantDataList,getContext());
+        restaurantAdapter=new RestaurantAdapter(restaurantDataList, getContext(), new RestaurantClickListener() {
+            @Override
+            public void onClick(int position) {
+                startActivity(new Intent(getContext(), RestaurantDetailsActivity.class));
+            }
+        });
         binding.rvRestaurant.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL,false));
         binding.rvRestaurant.setHasFixedSize(true);
         binding.rvRestaurant.setAdapter(restaurantAdapter);

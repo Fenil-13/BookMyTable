@@ -6,15 +6,22 @@
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable-v24/bg_blue_border_rounded_cornwe.xml" value="0.346782431052094" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable-v24/ic_cursor_color.xml" value="0.346782431052094" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/bg_blue_fill__rounded_color.xml" value="0.346782431052094" />
-        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/ic_close.xml" value="0.346782431052094" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/ic_subject.xml" value="0.346782431052094" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/line_dash_grey_20.xml" value="0.346782431052094" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_home.xml" value="0.14" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_login.xml" value="0.30570652173913043" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_phone_auth.xml" value="0.30570652173913043" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_restaurant_details.xml" value="0.33" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_splash.xml" value="0.30570652173913043" />
-        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/fragment_booking.xml" value="0.30570652173913043" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_table_booking.xml" value="0.33" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/dialog_booking_success.xml" value="0.27355072463768115" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/fragment_booking.xml" value="0.2" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/fragment_home.xml" value="0.30570652173913043" />
-        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/fragment_profile.xml" value="0.30570652173913043" />
-        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_restaurant.xml" value="0.5" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_booking.xml" value="0.5" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_restaurant.xml" value="0.33" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18" />
       </map>
     </option>

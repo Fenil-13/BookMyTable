@@ -2,7 +2,6 @@ package com.digitalgenius.bookmytable.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.digitalgenius.api.models.entities.RestaurantData;
 import com.digitalgenius.bookmytable.databinding.ItemRestaurantBinding;
+import com.digitalgenius.bookmytable.interfaces.RestaurantClickListener;
 
 import java.util.ArrayList;
 
@@ -18,10 +18,12 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.re
     private ArrayList<RestaurantData> restaurantDataList;
     private Context context;
     private ItemRestaurantBinding binding ;
+    private RestaurantClickListener clickListener;
 
-    public RestaurantAdapter(ArrayList<RestaurantData> restaurantDataList, Context context) {
+    public RestaurantAdapter(ArrayList<RestaurantData> restaurantDataList, Context context, RestaurantClickListener clickListener) {
         this.restaurantDataList = restaurantDataList;
         this.context = context;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -33,7 +35,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.re
 
     @Override
     public void onBindViewHolder(@NonNull restaurantViewHolder holder, int position) {
-
+        binding.restaurantContainer.setOnClickListener(v->{
+            clickListener.onClick(position);
+        });
     }
 
     @Override

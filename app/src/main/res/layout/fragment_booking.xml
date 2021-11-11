@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nested_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BookingFragment">
+    android:clipToPadding="false"
+    android:scrollbars="none"
+    android:scrollingCache="true">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@color/light_blue_50"
+           android:orientation="vertical">
 
-</FrameLayout>
+           <LinearLayout
+               android:id="@+id/layout_current_booking"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Current"
+                   android:fontFamily="@font/poppins"
+                   android:layout_margin="10dp"
+                   android:textSize="20sp"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                   android:textColor="@color/black"
+                   app:fontFamily="sans-serif-medium" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_marginStart="10dp"
+                   android:layout_marginEnd="10dp"
+                   android:background="@color/themeColor"/>
+               <androidx.recyclerview.widget.RecyclerView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   tools:itemCount="2"
+                   tools:listitem="@layout/item_booking"
+                   android:id="@+id/rvCurrentBooking"/>
+           </LinearLayout>
+
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Completed"
+               android:fontFamily="@font/poppins"
+               android:background="@color/white"
+               android:padding="10dp"
+               android:textSize="20sp"
+               android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+               android:textColor="@color/black"
+               app:fontFamily="sans-serif-medium" />
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:layout_marginStart="10dp"
+               android:layout_marginEnd="10dp"
+               android:background="@color/themeColor"/>
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/white"
+               tools:listitem="@layout/item_booking"
+               android:id="@+id/rvCompletedBooking"/>
+       </LinearLayout>
+
+
+       <androidx.fragment.app.FragmentContainerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/fragment_container_view"/>
+   </RelativeLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>
