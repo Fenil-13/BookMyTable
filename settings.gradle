@@ -8,4 +8,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "BookMyTable"
 include ':app'
-include ':api'

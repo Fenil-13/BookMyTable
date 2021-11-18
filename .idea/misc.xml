@@ -13,7 +13,7 @@
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_login.xml" value="0.30570652173913043" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_phone_auth.xml" value="0.30570652173913043" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_restaurant_details.xml" value="0.33" />
-        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_sign_up.xml" value="0.5" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_splash.xml" value="0.30570652173913043" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_table_booking.xml" value="0.33" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/dialog_booking_success.xml" value="0.27355072463768115" />
@@ -26,7 +26,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

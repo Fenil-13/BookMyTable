@@ -11,13 +11,13 @@
         android:theme="@style/Theme.BookMyTable"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activities.TableBookingActivity"
+            android:name=".ui.activities.TableBookingActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.RestaurantDetailsActivity"
+            android:name=".ui.activities.RestaurantDetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".ui.activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,14 +26,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.HomeActivity"
+            android:name=".ui.activities.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home" />
         <activity
-            android:name=".activities.PhoneAuthActivity"
+            android:name=".ui.activities.PhoneAuthActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.SignActivity"
+            android:name=".ui.activities.SignActivity"
             android:exported="true" />
 
         <meta-data
