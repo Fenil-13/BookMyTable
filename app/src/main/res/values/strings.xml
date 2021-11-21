@@ -1,20 +1,14 @@
 <resources>
     <string name="app_name">BookMyTable</string>
     <string name="title_activity_phone_auth">PhoneAuthActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="otp">OTP</string>
     <string name="send_otp">Send OTP</string>
     <string name="username">Username</string>
@@ -29,4 +23,32 @@
     <string name="dummy_type">2 SEATER</string>
     <string name="thank_you">Thank you</string>
     <string name="transaction_details">Receipt</string>
+
+    <string name="dot">•</string>
+    <string name="made_in_india">Made In India ❤</string>
+    <string name="get_started">Get Started</string>
+    <string name="main_headline">Book table in your favourite restaurants?</string>
+
+    <string name="slide_1_title">Delivered quickly to \n your doorstep</string>
+    <string name="slide_2_title">Order from a wide range\n of restaurants</string>
+    <string name="slide_3_title">With a wide collection\n of cuisines</string>
+
+    <string name="log_in">LOG IN</string>
+    <string name="enter_your_phone_number_to_proceed">Enter your phone number to proceed</string>
+    <string name="_10_digit_mobile_number">10 digit mobile number</string>
+    <string name="enter_phone_number">ENTER PHONE NUMBER</string>
+    <string name="verify_otp">VERIFY OTP</string>
+    <string name="otp_sent_to_917573056506">OTP Sent to +917573056506</string>
+    <string name="resend">RESEND</string>
+    <string name="VERIFY_OTP">ENTER OTP</string>
+    <string name="enter_otp">ENTER OTP</string>
+    <string name="login">LOGIN</string>
+    <string name="enter_the_username">Enter Username</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="email">Email</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="location">Location</string>
+
+    <string name="term_link">https://www.google.com/</string>
+    <string name="policy_link">https://www.google.com/</string>
 </resources>

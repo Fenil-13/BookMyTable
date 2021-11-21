@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.digitalgenius.bookmytable">
 
     <application
@@ -9,7 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMyTable"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.IntroActivity"
+            android:exported="true"/>
         <activity
             android:name=".ui.activities.TableBookingActivity"
             android:exported="true" />
@@ -33,7 +41,7 @@
             android:name=".ui.activities.PhoneAuthActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activities.SignActivity"
+            android:name=".ui.activities.SignUpActivity"
             android:exported="true" />
 
         <meta-data

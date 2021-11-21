@@ -1,19 +1,19 @@
 package com.digitalgenius.bookmytable.ui.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.digitalgenius.bookmytable.R;
 import com.digitalgenius.bookmytable.databinding.ActivityTableBookingBinding;
-import com.digitalgenius.bookmytable.ui.fragments.DialogBookingSuccessFragment;
 import com.digitalgenius.bookmytable.interfaces.BookingDialogListener;
+import com.digitalgenius.bookmytable.ui.fragments.DialogBookingSuccessFragment;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;

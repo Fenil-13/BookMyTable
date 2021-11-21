@@ -1,4 +1,4 @@
-package com.digitalgenius.api.models.responses
+package com.digitalgenius.bookmytable.api.models.responses
 
 
 import com.google.gson.annotations.SerializedName

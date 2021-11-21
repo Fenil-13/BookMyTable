@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.digitalgenius.api.models.entities.RestaurantData;
 import com.digitalgenius.bookmytable.databinding.ItemRestaurantBinding;
 import com.digitalgenius.bookmytable.interfaces.RestaurantClickListener;
 
@@ -15,13 +14,11 @@ import java.util.ArrayList;
 
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.restaurantViewHolder> {
 
-    private ArrayList<RestaurantData> restaurantDataList;
     private Context context;
     private ItemRestaurantBinding binding ;
     private RestaurantClickListener clickListener;
 
-    public RestaurantAdapter(ArrayList<RestaurantData> restaurantDataList, Context context, RestaurantClickListener clickListener) {
-        this.restaurantDataList = restaurantDataList;
+    public RestaurantAdapter( Context context, RestaurantClickListener clickListener) {
         this.context = context;
         this.clickListener = clickListener;
     }
@@ -42,7 +39,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.re
 
     @Override
     public int getItemCount() {
-        return restaurantDataList.size();
+        return 10;
     }
 
     public class restaurantViewHolder extends RecyclerView.ViewHolder {

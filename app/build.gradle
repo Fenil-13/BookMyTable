@@ -87,4 +87,13 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
+
+    //Otp Text View
+    implementation 'com.chaos.view:pinview:1.4.4'
+
+    //custom chrome tab
+    implementation 'androidx.browser:browser:1.4.0'
+
+    //Sweet Alert
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 }
