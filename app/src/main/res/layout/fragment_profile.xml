@@ -259,7 +259,48 @@
                     </RelativeLayout>
 
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/modeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/bg_darken_gray"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/_50sdp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingRight="@dimen/_15sdp">
 
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_mode"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/spacing_large"
+                        android:layout_marginRight="@dimen/spacing_large"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins"
+                        android:text="Change to light mode"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        app:fontFamily="sans-serif-medium" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/toggleMode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"/>
+                    </RelativeLayout>
+                </LinearLayout>
                 <LinearLayout
                     android:id="@+id/termLayout"
                     android:layout_width="match_parent"

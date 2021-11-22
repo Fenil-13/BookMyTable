@@ -11,13 +11,16 @@
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/bg_onboarding.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/bg_theme_corner.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/button.xml" value="0.35833333333333334" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/ic_booking.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/ic_close.xml" value="0.346782431052094" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.35833333333333334" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/ic_person.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/ic_subject.xml" value="0.346782431052094" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/line_dash_grey_20.xml" value="0.346782431052094" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/slide_1.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/slide_2.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/slide_3.xml" value="0.35833333333333334" />
-        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_home.xml" value="0.14" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_intro.xml" value="0.32135416666666666" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_login.xml" value="0.30570652173913043" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_phone_auth.xml" value="0.33" />

@@ -319,4 +319,6 @@
     <color name="grey_900">#212121</color>
     <color name="grey_1000">#1a1a1a</color>
 
+    <color name="darken_grey">#121212</color>
+
 </resources>
