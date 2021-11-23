@@ -13,19 +13,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
-            android:name=".ui.activities.LoginActivity"
+            android:name=".ui.MyRestaurant_A.MyRestaurantActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.IntroActivity"
-            android:exported="true"/>
+            android:name=".ui.Login_A.LoginActivity"
+            android:exported="false" />
         <activity
-            android:name=".ui.activities.TableBookingActivity"
+            android:name=".ui.Intro_A.IntroActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activities.RestaurantDetailsActivity"
+            android:name=".ui.TableBooking_A.TableBookingActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activities.SplashActivity"
+            android:name=".ui.Home_A.RestaurantDetails_F.RestaurantDetailsFragment"
+            android:exported="true" />
+        <activity
+            android:name=".ui.Splash_A.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,14 +37,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.HomeActivity"
+            android:name=".ui.Home_A.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home" />
         <activity
-            android:name=".ui.activities.PhoneAuthActivity"
+            android:name=".ui.PhoneAuth_A.PhoneAuthActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activities.SignUpActivity"
+            android:name=".ui.SignUp_A.SignUpActivity"
             android:exported="true" />
 
         <meta-data

@@ -2,6 +2,7 @@ package com.digitalgenius.bookmytable.api.models.entities
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Restaurant(
     @SerializedName("_id")
@@ -19,11 +20,17 @@ data class Restaurant(
     @SerializedName("restaurant_opening_time")
     val restaurantOpeningTime: String,
     @SerializedName("restaurant_pics")
-    val restaurantPics: List<String>,
+    val restaurantPics: List<Any>,
     @SerializedName("restaurant_short_desc")
     val restaurantShortDesc: String,
     @SerializedName("status")
     val status: String,
+    @SerializedName("user_email")
+    val userEmail: String,
     @SerializedName("user_id")
-    val userId: String
-)
+    val userId: String,
+    @SerializedName("user_name")
+    val userName: String,
+    @SerializedName("user_profile_pic")
+    val userProfilePic: String
+):Serializable

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_restaurant_nav_graph"
+    app:startDestination="@id/restaurantTableFragment">
+
+
+    <fragment
+        android:id="@+id/restaurantTableFragment"
+        android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.RestaurantTable_F.RestaurantTableFragment"
+        tools:layout="@layout/fragment_restaurant_table"
+        android:label="RestaurantTableFragment" >
+        <action
+            android:id="@+id/action_restaurantTableFragment_to_addTableFragment"
+            app:destination="@id/addTableFragment" />
+        <action
+            android:id="@+id/action_restaurantTableFragment_to_createRestaurantFragment"
+            app:destination="@id/createRestaurantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantProfileFragment"
+        android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.RestaurantProfile_F.RestaurantProfileFragment"
+        tools:layout="@layout/fragment_restaurant_profile"
+        android:label="RestaurantTableFragment" />
+    <fragment
+        android:id="@+id/createRestaurantFragment"
+        android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.Create_Restaurant_A.CreateRestaurantFragment"
+        tools:layout="@layout/fragment_create_restaurant"
+        android:label="CreateRestaurantFragment" />
+    <fragment
+        android:id="@+id/addTableFragment"
+        android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.AddTable_F.AddTableFragment"
+        tools:layout="@layout/fragment_add_table"
+        android:label="AddTableFragment" />
+
+
+</navigation>

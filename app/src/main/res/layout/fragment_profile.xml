@@ -36,7 +36,7 @@
 
                     <TextView
                         android:id="@+id/tvUsername"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
@@ -46,9 +46,9 @@
                         app:fontFamily="sans-serif-medium" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:layout_marginTop="@dimen/_2sdp"
                         android:text="Verified"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                         android:textColor="@color/colorPrimary" />
@@ -56,7 +56,7 @@
                 </LinearLayout>
 
                 <View
-                    android:layout_width="@dimen/spacing_large"
+                    android:layout_width="@dimen/_10sdp"
                     android:layout_height="0dp" />
 
                 <com.makeramen.roundedimageview.RoundedImageView
@@ -101,8 +101,8 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
@@ -138,8 +138,8 @@
                         android:id="@+id/tvUserPhoneNumber"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
@@ -149,8 +149,8 @@
                         app:fontFamily="sans-serif-medium" />
 
                     <RelativeLayout
-                        android:layout_width="35dp"
-                        android:layout_height="20dp">
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_20sdp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -188,8 +188,8 @@
                         android:id="@+id/tvUserEmail"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
@@ -199,8 +199,8 @@
                         app:fontFamily="sans-serif-medium" />
 
                     <RelativeLayout
-                        android:layout_width="35dp"
-                        android:layout_height="20dp">
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_20sdp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -237,8 +237,8 @@
                         android:id="@+id/tvUserLocation"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
@@ -248,8 +248,8 @@
                         app:fontFamily="sans-serif-medium" />
 
                     <RelativeLayout
-                        android:layout_width="35dp"
-                        android:layout_height="20dp">
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_20sdp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -283,8 +283,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
                         android:text="Change to light mode"
@@ -324,8 +324,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
                         android:text="Term and condition"
@@ -358,8 +358,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
                         android:text="Privacy Policy"
@@ -392,8 +392,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
                         android:ellipsize="end"
                         android:fontFamily="@font/poppins"
                         android:text="Log Out"
@@ -406,7 +406,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_mlarge" />
+                android:layout_height="@dimen/_20sdp" />
 
         </LinearLayout>
 

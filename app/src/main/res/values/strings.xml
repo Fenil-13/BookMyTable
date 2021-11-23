@@ -51,4 +51,17 @@
 
     <string name="term_link">https://www.google.com/</string>
     <string name="policy_link">https://www.google.com/</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tables">Tables</string>
+    <string name="restaurant_profile">Restaurant Profile</string>
+    <string name="enter_restaurant_name">Enter Restaurant Name</string>
+    <string name="enter_restaurant_short_description">Enter Restaurant Short Description</string>
+    <string name="restaurant_short_description">Restaurant Short Description</string>
+    <string name="enter_restaurant_long_description">Enter Restaurant Long Description</string>
+    <string name="restaurant_long_description">Restaurant Long Description</string>
+    <string name="create_restaurant">Create Restaurant</string>
+    <string name="enter_restaurant_phone_number">Enter Restaurant Phone Number</string>
+    <string name="restaurant_phone_number">Restaurant Phone Number</string>
+    <string name="restaurant_timing">Restaurant Timing</string>
 </resources>

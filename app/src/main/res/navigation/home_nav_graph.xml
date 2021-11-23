@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.digitalgenius.bookmytable.ui.Home_A.Home_F.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_restaurantDetails"
+            app:destination="@id/navigation_restaurantDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.digitalgenius.bookmytable.ui.Home_A.Profile_F.ProfileFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_booking"
+        android:name="com.digitalgenius.bookmytable.ui.Home_A.Booking_F.BookingFragment"
+        android:label="@string/title_booking"
+        tools:layout="@layout/fragment_booking" >
+        <action
+            android:id="@+id/action_navigation_booking_to_dialogBookingSuccessFragment"
+            app:destination="@id/dialogBookingSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_restaurantDetails"
+        android:name="com.digitalgenius.bookmytable.ui.Home_A.RestaurantDetails_F.RestaurantDetailsFragment"
+        android:label="RestaurantDetailsFragment"
+        tools:layout="@layout/fragment_restaurant_details">
+        <argument
+            android:name="restaurant_data"
+            app:argType="com.digitalgenius.bookmytable.api.models.entities.Restaurant" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogBookingSuccessFragment"
+        tools:layout="@layout/dialog_booking_success"
+        android:name="com.digitalgenius.bookmytable.ui.TableBooking_A.DialogBookingSuccessFragment"
+        android:label="DialogBookingSuccessFragment" />
+</navigation>

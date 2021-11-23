@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/restaurantTableFragment"
+        android:icon="@drawable/ic_table"
+        android:title="@string/tables" />
+
+
+    <item
+        android:id="@+id/restaurantProfileFragment"
+        android:icon="@drawable/ic_person"
+        android:title="@string/restaurant_profile" />
+
+
+</menu>
