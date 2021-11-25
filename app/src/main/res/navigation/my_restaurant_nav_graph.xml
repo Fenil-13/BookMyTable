@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_restaurantTableFragment_to_createRestaurantFragment"
             app:destination="@id/createRestaurantFragment" />
+        <action
+            android:id="@+id/action_restaurantTableFragment_to_restaurantTableTimeSlotFragment"
+            app:destination="@id/restaurantTableTimeSlotFragment" />
     </fragment>
     <fragment
         android:id="@+id/restaurantProfileFragment"
@@ -33,6 +36,20 @@
         android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.AddTable_F.AddTableFragment"
         tools:layout="@layout/fragment_add_table"
         android:label="AddTableFragment" />
+    <fragment
+        android:id="@+id/bookingHistoryFragment"
+        tools:layout="@layout/fragment_restaurant_booking_history"
+        android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.Booking_History_F.BookingHistoryFragment"
+        android:label="BookingHistoryFragment" />
+    <fragment
+        android:id="@+id/restaurantTableTimeSlotFragment"
+        android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.RestaurantTableTimeSlot_F.RestaurantTableTimeSlotFragment"
+        tools:layout="@layout/fragment_restaurant_table_time_slot"
+        android:label="RestaurantTableTimeSlotFragment" >
+        <argument
+            android:name="time_slot_data"
+            app:argType="com.digitalgenius.bookmytable.api.models.responses.TableResponse" />
+    </fragment>
 
 
 </navigation>

@@ -45,4 +45,34 @@ interface BMTAPI {
     suspend fun userBookingHistory(
         @Body userBookingRequest: UserBookingRequest
     ):Response<UserBookingHistoryResponse>
+
+
+
+    @POST("user_get_restaurants")
+    suspend fun userGetRestaurant(
+        @Body userBookingRequest: UserBookingRequest
+    ):Response<UserRestaurantsResponse>
+
+
+    @POST("owner_get_restaurant_tables")
+    suspend fun ownerGetRestaurantTables(
+        @Body ownerGetRestaurantTableRequest: OwnerGetRestaurantTableRequest
+    ):Response<OwnerGetRestaurantTableResponse>
+
+
+    @POST("booking_list_by_restaurant_id")
+    suspend fun bookingListByRestaurantId(
+        @Body ownerGetRestaurantTableRequest: OwnerGetRestaurantTableRequest
+    ):Response<RestaurantBookingHistoryResponse>
+
+
+    @POST("order_completed")
+    suspend fun orderCompleted(
+        @Body orderCompletedRequest: OrderCompletedRequest
+    ):Response<OrderCompletedResponse>
+
+    @POST("add_tables")
+    suspend fun addTable(
+        @Body addTableRequest: AddTableRequest
+    ):Response<GeneralResponse>
 }

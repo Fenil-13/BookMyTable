@@ -1,14 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MyRestaurant_A.RestaurantProfile_F.RestaurantProfileFragment">
+    android:background="@android:color/black"
+    android:paddingLeft="@dimen/_16sdp"
+    android:paddingRight="@dimen/_16sdp"
+    android:visibility="visible">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/create_restaurant_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Create Table"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Table Type (SEATER COUNT)"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/_13ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@android:color/darker_gray"
+            android:theme="@style/TextInputLayout"
+            app:hintTextAppearance="@style/TextInputLayoutHint"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTableType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_theme_corner"
+                android:hint="Table Type (2,3,5,6)"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="@dimen/_13ssp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Enter Table Count"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/_13ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@android:color/darker_gray"
+            android:theme="@style/TextInputLayout"
+            app:hintTextAppearance="@style/TextInputLayoutHint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTableCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_theme_corner"
+                android:hint="Total Table Count(8,2,1)"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="@dimen/_13ssp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/add_table"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/_10sdp" />
+    </LinearLayout>
+</ScrollView>

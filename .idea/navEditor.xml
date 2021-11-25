@@ -154,6 +154,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="bookingHistoryFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-407" />
+                            <option name="y" value="-220" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="createRestaurantFragment">
                     <value>
                       <LayoutPositions>
@@ -199,7 +211,24 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_restaurantTableFragment_to_restaurantTableTimeSlotFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="restaurantTableTimeSlotFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="158" />
+                            <option name="y" value="845" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

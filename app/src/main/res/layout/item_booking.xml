@@ -135,12 +135,28 @@
                             android:layout_weight="1" />
 
                         <ImageView
+                            android:id="@+id/ivDelete"
                             android:layout_gravity="center_vertical"
                             android:layout_width="@dimen/_30sdp"
                             android:layout_height="@dimen/_30sdp"
                             android:padding="@dimen/_5sdp"
                             app:srcCompat="@drawable/ic_delete"
                             app:tint="@color/grey_60" />
+
+
+                        <Button
+                            android:id="@+id/tvMarkAsCompleted"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_29sdp"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:text="Mark As Completed"
+                            android:textStyle="bold"
+                            android:textColor="@color/grey_60"
+                            android:textSize="@dimen/_10sdp" />
 
                     </LinearLayout>
 

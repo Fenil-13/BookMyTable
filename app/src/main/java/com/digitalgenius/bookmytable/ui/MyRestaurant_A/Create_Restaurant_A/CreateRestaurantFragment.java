@@ -27,8 +27,10 @@ import com.digitalgenius.bookmytable.utils.Resource;
 import java.util.Locale;
 
 public class CreateRestaurantFragment extends Fragment {
+
     FragmentCreateRestaurantBinding binding;
     MyRestaurantViewModel viewModel;
+
     TimePickerDialog.OnTimeSetListener startTimePickerDialogListener = new TimePickerDialog.OnTimeSetListener() {
         @Override
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -49,8 +51,6 @@ public class CreateRestaurantFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentCreateRestaurantBinding.inflate(getLayoutInflater(), container, false);
         return binding.getRoot();
-
-
     }
 
     @Override
@@ -75,6 +75,7 @@ public class CreateRestaurantFragment extends Fragment {
                 );
                 Functions.INSTANCE.show_progress_dialog(requireContext(),"Creating Restaurant");
                 viewModel.createRestaurant(request);
+
             }
         });
 
@@ -92,6 +93,7 @@ public class CreateRestaurantFragment extends Fragment {
                 if (response instanceof Resource.Success) {
                     Functions.INSTANCE.hide_progress_dialog();
                     Toast.makeText(requireContext(), "Created Restaurant Successfully", Toast.LENGTH_SHORT).show();
+                    requireActivity().getOnBackPressedDispatcher().onBackPressed();
                 } else if (response instanceof Resource.Error) {
                     Functions.INSTANCE.hide_progress_dialog();
                     Functions.INSTANCE.show_long_toast(requireContext(), response.getMessage());

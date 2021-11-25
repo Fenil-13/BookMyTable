@@ -64,4 +64,5 @@
     <string name="enter_restaurant_phone_number">Enter Restaurant Phone Number</string>
     <string name="restaurant_phone_number">Restaurant Phone Number</string>
     <string name="restaurant_timing">Restaurant Timing</string>
+    <string name="add_table">Add Table</string>\
 </resources>

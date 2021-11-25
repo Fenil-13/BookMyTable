@@ -123,9 +123,6 @@ public class TableBookingActivity extends AppCompatActivity {
 
             }
         });
-//        binding.btnBookTable.setOnClickListener(v -> {
-//            openSuccessDialog();
-//        });
 
         bookingViewModel.getBookTableResponse().observe(this,response->{
             if (response instanceof Resource.Success) {

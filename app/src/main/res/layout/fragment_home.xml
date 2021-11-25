@@ -29,7 +29,32 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:visibility="gone"
         tools:listitem="@layout/item_restaurant"
         android:id="@+id/rvRestaurant"/>
+    <RelativeLayout
+        android:id="@+id/layoutNoRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/ivNoHistory"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/no_restaurant" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivNoHistory"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="No Restaurant Availables"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp" />
+    </RelativeLayout>
 
 </LinearLayout>

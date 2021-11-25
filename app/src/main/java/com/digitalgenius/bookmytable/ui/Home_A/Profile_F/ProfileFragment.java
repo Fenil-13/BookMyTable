@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.digitalgenius.bookmytable.R;
 import com.digitalgenius.bookmytable.databinding.FragmentProfileBinding;
 import com.digitalgenius.bookmytable.ui.MyRestaurant_A.MyRestaurantActivity;
@@ -46,6 +47,11 @@ public class ProfileFragment extends Fragment {
         binding.tvUserPhoneNumber.setText(Constants.Companion.getUserData().getUserPhoneNumber());
         binding.tvUserLocation.setText(Constants.Companion.getUserData().getUserLocation());
         binding.tvUserEmail.setText(Constants.Companion.getUserData().getUserEmail());
+        if(!Constants.Companion.getUserData().getUserProfilePic().equals("")){
+            Glide.with(requireContext())
+                    .load(Constants.Companion.getUserData().getUserProfilePic())
+                    .into(binding.ivProfilePic);
+        }
     }
 
     private void setListener() {
@@ -66,6 +72,10 @@ public class ProfileFragment extends Fragment {
         binding.restaurantLayout.setOnClickListener((v)->{
             Intent restaurantIntent=new Intent(requireContext(), MyRestaurantActivity.class);
             startActivity(restaurantIntent);
+        });
+
+        binding.ivProfilePic.setOnClickListener((v)->{
+
         });
     }
 

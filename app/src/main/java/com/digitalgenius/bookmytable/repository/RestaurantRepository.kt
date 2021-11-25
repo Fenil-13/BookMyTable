@@ -1,10 +1,7 @@
 package com.digitalgenius.bookmytable.repository
 
 import com.digitalgenius.api.BMTClient
-import com.digitalgenius.bookmytable.api.models.requests.BookTableRequest
-import com.digitalgenius.bookmytable.api.models.requests.CreateRestaurantRequest
-import com.digitalgenius.bookmytable.api.models.requests.GetTableByTypeRequest
-import com.digitalgenius.bookmytable.api.models.requests.UserBookingRequest
+import com.digitalgenius.bookmytable.api.models.requests.*
 
 class RestaurantRepository {
     suspend fun getAllRestaurant()=
@@ -21,4 +18,21 @@ class RestaurantRepository {
 
     suspend fun getUserBookingHistory(userBookingRequest: UserBookingRequest)=
         BMTClient.publicApi.userBookingHistory(userBookingRequest);
+
+    suspend fun getMyRestaurant(userBookingRequest: UserBookingRequest)=
+        BMTClient.publicApi.userGetRestaurant(userBookingRequest);
+
+
+    suspend fun getOwnerGetRestaurantTables(ownerGetRestaurantTableRequest: OwnerGetRestaurantTableRequest)=
+        BMTClient.publicApi.ownerGetRestaurantTables(ownerGetRestaurantTableRequest);
+
+    suspend fun getBookingListByRestaurantId(ownerGetRestaurantTableRequest: OwnerGetRestaurantTableRequest)=
+        BMTClient.publicApi.bookingListByRestaurantId(ownerGetRestaurantTableRequest);
+
+    suspend fun orderCompleted(orderCompletedRequest: OrderCompletedRequest)=
+        BMTClient.publicApi.orderCompleted(orderCompletedRequest);
+
+
+    suspend fun addTable(addTableRequest: AddTableRequest)=
+        BMTClient.publicApi.addTable(addTableRequest);
 }

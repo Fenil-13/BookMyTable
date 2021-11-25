@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/layoutItemAvailableTable"
+    android:id="@+id/layoutTable"
     android:background="@color/black">
 
     <androidx.cardview.widget.CardView
@@ -13,8 +12,9 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:elevation="@dimen/_5sdp"
         app:cardBackgroundColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,14 +34,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvTimeSlot"
+                    android:id="@+id/tvTableType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:ellipsize="end"
                     android:includeFontPadding="false"
-                    android:text="8:00 - 9:00"
+                    android:text="2 SEATER"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_10sdp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -67,8 +67,8 @@
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_margin="@dimen/_10sdp"
-                android:visibility="gone"
-                android:src="@drawable/ic_done"
+                android:visibility="visible"
+                android:src="@drawable/ic_mode"
                 android:padding="@dimen/_5sdp"
                 android:background="@drawable/bg_color_primary_inactive"/>
 

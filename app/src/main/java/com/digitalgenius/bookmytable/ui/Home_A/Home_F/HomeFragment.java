@@ -45,6 +45,15 @@ public class HomeFragment extends Fragment {
             if (response instanceof Resource.Success) {
                 Functions.INSTANCE.hide_progress_dialog();
                 restaurantAdapter.differ.submitList(response.getData().getRestaurantList());
+
+                if(restaurantAdapter.differ.getCurrentList().size()==0){
+                    binding.rvRestaurant.setVisibility(View.GONE);
+                    binding.layoutNoRestaurant.setVisibility(View.VISIBLE);
+                }else{
+                    binding.rvRestaurant.setVisibility(View.VISIBLE);
+                    binding.layoutNoRestaurant.setVisibility(View.GONE);
+                }
+
             } else if (response instanceof Resource.Error) {
                 Functions.INSTANCE.hide_progress_dialog();
                 Functions.INSTANCE.show_long_toast(requireContext(), response.getMessage());

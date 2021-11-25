@@ -60,7 +60,7 @@
                     android:layout_height="0dp" />
 
                 <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/image"
+                    android:id="@+id/ivProfilePic"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
