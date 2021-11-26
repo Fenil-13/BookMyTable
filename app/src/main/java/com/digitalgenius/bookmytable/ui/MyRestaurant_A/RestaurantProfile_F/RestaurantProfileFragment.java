@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +16,14 @@ import com.digitalgenius.bookmytable.api.models.entities.Restaurant;
 import com.digitalgenius.bookmytable.api.models.responses.UserRestaurantsResponse;
 import com.digitalgenius.bookmytable.databinding.FragmentProfileBinding;
 import com.digitalgenius.bookmytable.databinding.FragmentRestaurantProfileBinding;
+import com.digitalgenius.bookmytable.ui.Home_A.Home_F.HomeFragmentDirections;
 import com.digitalgenius.bookmytable.ui.MyRestaurant_A.MyRestaurantActivity;
 import com.digitalgenius.bookmytable.ui.MyRestaurant_A.MyRestaurantViewModel;
 
 public class RestaurantProfileFragment extends Fragment {
     FragmentRestaurantProfileBinding binding;
     MyRestaurantViewModel restaurantViewModel;
+    Restaurant restaurant;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,10 +37,21 @@ public class RestaurantProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         restaurantViewModel = ((MyRestaurantActivity) getActivity()).myRestaurantViewModel;
         setData();
+        setListener();
+    }
+
+    private void setListener() {
+        binding.tvEditRestaurant.setOnClickListener((v)->{
+            RestaurantProfileFragmentDirections.ActionRestaurantProfileFragmentToCreateRestaurantFragment direction=RestaurantProfileFragmentDirections.
+                    actionRestaurantProfileFragmentToCreateRestaurantFragment("Edit",restaurant);
+            NavHostFragment.findNavController(RestaurantProfileFragment.this)
+                    .navigate(direction);
+        });
     }
 
     public void setData(){
-        Restaurant restaurant=restaurantViewModel.getMyRestaurantResponse().getValue().getData().getRestaurantList().get(0);
+
+        restaurant = restaurantViewModel.getMyRestaurantResponse().getValue().getData().getRestaurantList().get(0);
 
         binding.tvRestaurantName.setText(restaurant.getRestaurantName());
         binding.tvRestaurantStatus.setText("Status : "+restaurant.getStatus());

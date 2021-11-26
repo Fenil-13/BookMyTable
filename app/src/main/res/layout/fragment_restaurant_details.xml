@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_5"
+    android:background="@color/black"
     android:fitsSystemWindows="true">
 
     <LinearLayout
         android:id="@+id/layoutHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/black"
         android:gravity="center"
         android:minHeight="60dp"
         android:orientation="vertical">
@@ -24,7 +24,7 @@
             android:gravity="center"
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/grey_80"
+            android:textColor="@color/white"
             app:fontFamily="sans-serif-medium" />
 
         <TextView
@@ -35,7 +35,7 @@
             android:maxLines="1"
             android:text="iddhar Pizza Milta hai"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:textColor="@color/grey_40" />
+            android:textColor="@color/amber_50" />
 
     </LinearLayout>
 
@@ -115,7 +115,7 @@
                             android:layout_height="wrap_content"
                             android:text="Krupal Patel"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/grey_60"
+                            android:textColor="@color/white"
                             app:fontFamily="sans-serif-medium" />
 
                         <LinearLayout
@@ -140,7 +140,7 @@
                                 android:ellipsize="end"
                                 android:text="Mehsana"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                                android:textColor="@color/grey_60" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
 
@@ -188,7 +188,7 @@
                             android:layout_height="wrap_content"
                             android:text="+91 7573056506"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/grey_80" />
+                            android:textColor="@color/white" />
 
                     </LinearLayout>
 
@@ -212,7 +212,7 @@
                             android:layout_height="wrap_content"
                             android:text="fjmoradiya@gmail.com"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/grey_80" />
+                            android:textColor="@color/white" />
 
                     </LinearLayout>
 
@@ -245,7 +245,7 @@
                             android:layout_height="wrap_content"
                             android:text="7:00 Am"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/grey_80" />
+                            android:textColor="@color/white" />
 
                     </LinearLayout>
 
@@ -269,7 +269,7 @@
                             android:layout_height="wrap_content"
                             android:text="11:00 PM"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/grey_80" />
+                            android:textColor="@color/white" />
 
                     </LinearLayout>
 
@@ -303,7 +303,7 @@
                     android:lineSpacingExtra="@dimen/_1sdp"
                     android:text="@string/long_dummy_text"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_80" />
+                    android:textColor="@color/white" />
 
 
             </LinearLayout>

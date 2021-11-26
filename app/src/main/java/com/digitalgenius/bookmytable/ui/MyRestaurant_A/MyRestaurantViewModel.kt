@@ -38,6 +38,9 @@ class MyRestaurantViewModel(app: Application, val restaurantRepository: Restaura
     val addTableResponse: MutableLiveData<Resource<GeneralResponse>> =
         MutableLiveData()
 
+    val updateRestaurantResponse: MutableLiveData<Resource<GeneralResponse>> =
+        MutableLiveData()
+
     init {
         val userBookingRequest = UserBookingRequest(Constants.userData!!.userId)
         getMyRestaurant(userBookingRequest)
@@ -229,6 +232,38 @@ class MyRestaurantViewModel(app: Application, val restaurantRepository: Restaura
     }
 
     private fun handleAddTableResponse(response: Response<GeneralResponse>): Resource<GeneralResponse>? {
+        if (response.isSuccessful) {
+            response.body()?.let { resultResponse ->
+                return Resource.Success(resultResponse)
+            }
+        }
+        return Resource.Error(response.message())
+    }
+
+    fun updateRestaurant(updateRestaurantRequest: UpdateRestaurantRequest) =
+        viewModelScope.launch {
+            safeUpdateRestaurantCall(updateRestaurantRequest)
+        }
+
+    private suspend fun safeUpdateRestaurantCall(updateRestaurantRequest: UpdateRestaurantRequest) {
+        updateRestaurantResponse.postValue(Resource.Loading())
+        try {
+            val response =
+                restaurantRepository.updateRestaurant(updateRestaurantRequest)
+
+            updateRestaurantResponse.postValue(
+                handleUpdateRestaurantResponse(response)
+            )
+        } catch (t: Throwable) {
+            when (t) {
+                is IOException -> updateRestaurantResponse.postValue(Resource.Error("Network Failure"))
+                else -> updateRestaurantResponse.postValue(Resource.Error("Conversion Error"))
+            }
+        }
+
+    }
+
+    private fun handleUpdateRestaurantResponse(response: Response<GeneralResponse>): Resource<GeneralResponse>? {
         if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 return Resource.Success(resultResponse)

@@ -55,6 +55,21 @@
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                         android:textColor="@color/colorPrimary" />
 
+                    <TextView
+                        android:id="@+id/tvEditRestaurant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_color_primary_inactive"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Edit Details"
+                        android:textSize="@dimen/_8ssp"
+                        android:textColor="@color/white" />
+
                 </LinearLayout>
 
                 <View
@@ -63,8 +78,8 @@
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/ivProfilePic"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_photo_male"
                     app:civ_border_color="@color/colorPrimary"
@@ -115,18 +130,6 @@
                         android:textSize="@dimen/_14ssp"
                         app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/ic_edit"
-                            app:tint="@color/colorPrimary" />
-
-                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -165,16 +168,6 @@
                         android:textSize="@dimen/_14ssp"
                         app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_edit"
-                            app:tint="@color/colorPrimary" />
-                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -213,17 +206,6 @@
                         android:textSize="@dimen/_14ssp"
                         app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_edit"
-                            app:tint="@color/colorPrimary" />
-                    </RelativeLayout>
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -261,16 +243,6 @@
                         android:textSize="@dimen/_14ssp"
                         app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_edit"
-                            app:tint="@color/colorPrimary" />
-                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -309,16 +281,6 @@
                         android:textSize="@dimen/_14ssp"
                         app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_edit"
-                            app:tint="@color/colorPrimary" />
-                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -357,16 +319,6 @@
                         android:textSize="@dimen/_14ssp"
                         app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_edit"
-                            app:tint="@color/colorPrimary" />
-                    </RelativeLayout>
 
                 </LinearLayout>
 

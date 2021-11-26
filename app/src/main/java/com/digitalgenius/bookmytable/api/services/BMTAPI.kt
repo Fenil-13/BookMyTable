@@ -75,4 +75,9 @@ interface BMTAPI {
     suspend fun addTable(
         @Body addTableRequest: AddTableRequest
     ):Response<GeneralResponse>
+
+    @POST("update_restaurant")
+    suspend fun updateRestaurant(
+        @Body updateRestaurantRequest: UpdateRestaurantRequest
+    ):Response<GeneralResponse>
 }

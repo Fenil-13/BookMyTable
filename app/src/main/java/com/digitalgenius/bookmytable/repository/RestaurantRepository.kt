@@ -35,4 +35,7 @@ class RestaurantRepository {
 
     suspend fun addTable(addTableRequest: AddTableRequest)=
         BMTClient.publicApi.addTable(addTableRequest);
+
+    suspend fun updateRestaurant(updateRestaurantRequest: UpdateRestaurantRequest)=
+        BMTClient.publicApi.updateRestaurant(updateRestaurantRequest);
 }
