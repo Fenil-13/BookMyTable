@@ -1,6 +1,7 @@
 package com.digitalgenius.bookmytable.ui.Splash_A;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +23,27 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(getMainLooper()).postDelayed(
                 () -> {
                     SharedPrefManager sharedPrefManager =SharedPrefManager.getInstance(getApplicationContext());
+
+                    if(sharedPrefManager.getStringData("Mode").equals("")){
+                        sharedPrefManager.setStringData("Mode","Dark");
+                        AppCompatDelegate
+                                .setDefaultNightMode(
+                                        AppCompatDelegate
+                                                .MODE_NIGHT_YES);
+                    }else{
+                        if(sharedPrefManager.getStringData("Mode").equals("Dark")){
+                            AppCompatDelegate
+                                    .setDefaultNightMode(
+                                            AppCompatDelegate
+                                                    .MODE_NIGHT_YES);
+                        }else{
+                            AppCompatDelegate
+                                    .setDefaultNightMode(
+                                            AppCompatDelegate
+                                                    .MODE_NIGHT_NO);
+                        }
+
+                    }
 
                     if(sharedPrefManager.getStringData("Login").equals("True")){
                         Constants.Companion.setUserData(sharedPrefManager.getUserData());

@@ -261,6 +261,7 @@
                         app:tint="@color/colorPrimary" />
 
                     <TextView
+                        android:id="@+id/tvUiMode"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -275,11 +276,12 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
+
                         <com.google.android.material.switchmaterial.SwitchMaterial
                             android:id="@+id/toggleMode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:checked="false"/>
+                            android:checked="false" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout

@@ -25,6 +25,8 @@
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/slide_1.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/slide_2.xml" value="0.35833333333333334" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/drawable/slide_3.xml" value="0.35833333333333334" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout-night/activity_home.xml" value="0.14221014492753623" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout-night/item_restaurant.xml" value="0.13541666666666666" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_intro.xml" value="0.32135416666666666" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/activity_login.xml" value="0.30570652173913043" />
@@ -49,7 +51,7 @@
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/fragment_user_update_profile.xml" value="0.2" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_available_table.xml" value="0.25" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_booking.xml" value="0.33" />
-        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_restaurant.xml" value="0.33" />
+        <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_restaurant.xml" value="0.264" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/item_table.xml" value="0.33" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/slide_1.xml" value="0.33559782608695654" />
         <entry key="..\:/BookMyTableApp/app/src/main/res/layout/slide_2.xml" value="0.33559782608695654" />

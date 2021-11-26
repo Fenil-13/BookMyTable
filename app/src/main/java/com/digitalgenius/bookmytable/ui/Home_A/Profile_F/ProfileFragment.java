@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 
 import com.bumptech.glide.Glide;
 import com.digitalgenius.bookmytable.R;
@@ -57,7 +59,7 @@ public class ProfileFragment extends Fragment {
         super.onResume();
         setData();
     }
-
+    SharedPrefManager sharedPrefManager;
     public void setData() {
         binding.tvUsername.setText(Constants.Companion.getUserData().getUserName());
         binding.tvUserPhoneNumber.setText(Constants.Companion.getUserData().getUserPhoneNumber());
@@ -67,6 +69,16 @@ public class ProfileFragment extends Fragment {
             Glide.with(requireContext())
                     .load(Constants.Companion.getUserData().getUserProfilePic())
                     .into(binding.ivProfilePic);
+        }
+
+
+        sharedPrefManager = SharedPrefManager.getInstance(getActivity().getApplicationContext());
+        if(sharedPrefManager.getStringData("Mode").equals("Dark")){
+            binding.toggleMode.setChecked(true);
+            binding.tvUiMode.setText("Enable Light Mode");
+        }else{
+            binding.toggleMode.setChecked(false);
+            binding.tvUiMode.setText("Enable Dark Mode");
         }
     }
 
@@ -100,7 +112,36 @@ public class ProfileFragment extends Fragment {
 
         });
 
+        binding.toggleMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            sharedPrefManager = SharedPrefManager.getInstance(getActivity().getApplicationContext());
+            if(isChecked){
+                binding.toggleMode.setChecked(true);
+                binding.tvUiMode.setText("Enable Light Mode");
+                sharedPrefManager.setStringData("Mode","Dark");
+            }else{
+                binding.toggleMode.setChecked(false);
+                binding.tvUiMode.setText("Enable Dark Mode");
+                sharedPrefManager.setStringData("Mode","Light");
+            }
+            toggleMode();
+        });
 
+
+    }
+
+    private void toggleMode() {
+        sharedPrefManager = SharedPrefManager.getInstance(getActivity().getApplicationContext());
+        if(sharedPrefManager.getStringData("Mode").equals("Dark")){
+            AppCompatDelegate
+                    .setDefaultNightMode(
+                            AppCompatDelegate
+                                    .MODE_NIGHT_YES);
+        }else{
+            AppCompatDelegate
+                    .setDefaultNightMode(
+                            AppCompatDelegate
+                                    .MODE_NIGHT_NO);
+        }
     }
 
     private void logout_user() {
