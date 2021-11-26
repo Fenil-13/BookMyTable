@@ -80,4 +80,14 @@ interface BMTAPI {
     suspend fun updateRestaurant(
         @Body updateRestaurantRequest: UpdateRestaurantRequest
     ):Response<GeneralResponse>
+
+    @POST("update_user")
+    suspend fun updateUser(
+        @Body userUpdateRequest: UserUpdateRequest
+    ):Response<GeneralResponse>
+
+    @POST("fetch_user_by_id")
+    suspend fun fetchUserById(
+        @Body userBookingRequest: UserBookingRequest
+    ):Response<FetchUserByIdResponse>
 }

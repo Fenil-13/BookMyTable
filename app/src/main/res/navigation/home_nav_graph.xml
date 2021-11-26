@@ -19,7 +19,11 @@
         android:id="@+id/navigation_profile"
         android:name="com.digitalgenius.bookmytable.ui.Home_A.Profile_F.ProfileFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_userUpdateProfileFragment"
+            app:destination="@id/userUpdateProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_booking"
         android:name="com.digitalgenius.bookmytable.ui.Home_A.Booking_F.BookingFragment"
@@ -43,4 +47,9 @@
         tools:layout="@layout/dialog_booking_success"
         android:name="com.digitalgenius.bookmytable.ui.TableBooking_A.DialogBookingSuccessFragment"
         android:label="DialogBookingSuccessFragment" />
+    <fragment
+        android:id="@+id/userUpdateProfileFragment"
+        android:name="com.digitalgenius.bookmytable.ui.Home_A.Update_Profile_F.UserUpdateProfileFragment"
+        tools:layout="@layout/fragment_user_update_profile"
+        android:label="UserUpdateProfileFragment" />
 </navigation>

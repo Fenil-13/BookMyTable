@@ -7,22 +7,31 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.digitalgenius.bookmytable.R;
+import com.digitalgenius.bookmytable.api.models.entities.UserData;
 import com.digitalgenius.bookmytable.databinding.FragmentProfileBinding;
+import com.digitalgenius.bookmytable.ui.Home_A.HomeActivity;
+import com.digitalgenius.bookmytable.ui.Home_A.RestaurantViewModel;
 import com.digitalgenius.bookmytable.ui.MyRestaurant_A.MyRestaurantActivity;
 import com.digitalgenius.bookmytable.ui.Splash_A.SplashActivity;
 import com.digitalgenius.bookmytable.utils.Constants;
+import com.digitalgenius.bookmytable.utils.Functions;
+import com.digitalgenius.bookmytable.utils.Resource;
 import com.digitalgenius.bookmytable.utils.SharedPrefManager;
 
 public class ProfileFragment extends Fragment {
 
     FragmentProfileBinding binding;
+    RestaurantViewModel viewModel;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,16 +47,23 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initUi();
+        viewModel = ((HomeActivity) getActivity()).restaurantViewModel;
         setListener();
     }
 
-    private void initUi() {
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setData();
+    }
+
+    public void setData() {
         binding.tvUsername.setText(Constants.Companion.getUserData().getUserName());
         binding.tvUserPhoneNumber.setText(Constants.Companion.getUserData().getUserPhoneNumber());
         binding.tvUserLocation.setText(Constants.Companion.getUserData().getUserLocation());
         binding.tvUserEmail.setText(Constants.Companion.getUserData().getUserEmail());
-        if(!Constants.Companion.getUserData().getUserProfilePic().equals("")){
+        if (!Constants.Companion.getUserData().getUserProfilePic().equals("")) {
             Glide.with(requireContext())
                     .load(Constants.Companion.getUserData().getUserProfilePic())
                     .into(binding.ivProfilePic);
@@ -55,34 +71,42 @@ public class ProfileFragment extends Fragment {
     }
 
     private void setListener() {
-        binding.termLayout.setOnClickListener((v)->{
+        binding.tvEditUser.setOnClickListener((v) -> {
+            NavHostFragment.findNavController(ProfileFragment.this).navigate(
+                    R.id.action_navigation_profile_to_userUpdateProfileFragment
+            );
+        });
+
+        binding.termLayout.setOnClickListener((v) -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getContext().getString(R.string.term_link)));
             startActivity(browserIntent);
         });
 
-        binding.policyLayout.setOnClickListener((v)->{
+        binding.policyLayout.setOnClickListener((v) -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getContext().getString(R.string.policy_link)));
             startActivity(browserIntent);
         });
 
-        binding.logoutLayout.setOnClickListener((v)->{
+        binding.logoutLayout.setOnClickListener((v) -> {
             logout_user();
         });
 
-        binding.restaurantLayout.setOnClickListener((v)->{
-            Intent restaurantIntent=new Intent(requireContext(), MyRestaurantActivity.class);
+        binding.restaurantLayout.setOnClickListener((v) -> {
+            Intent restaurantIntent = new Intent(requireContext(), MyRestaurantActivity.class);
             startActivity(restaurantIntent);
         });
 
-        binding.ivProfilePic.setOnClickListener((v)->{
+        binding.ivProfilePic.setOnClickListener((v) -> {
 
         });
+
+
     }
 
     private void logout_user() {
         SharedPrefManager sharedPrefManager =
                 SharedPrefManager.getInstance(getContext().getApplicationContext());
-        sharedPrefManager.setStringData("Login","False");
+        sharedPrefManager.setStringData("Login", "False");
         startActivity(new Intent(getContext(), SplashActivity.class));
         getActivity().finish();
     }
@@ -90,6 +114,6 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        binding=null;
+        binding = null;
     }
 }

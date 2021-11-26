@@ -71,6 +71,15 @@
                             <option name="y" value="5" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_navigation_profile_to_userUpdateProfileFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -81,6 +90,18 @@
                           <Point>
                             <option name="x" value="373" />
                             <option name="y" value="14" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="userUpdateProfileFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="914" />
+                            <option name="y" value="486" />
                           </Point>
                         </option>
                       </LayoutPositions>

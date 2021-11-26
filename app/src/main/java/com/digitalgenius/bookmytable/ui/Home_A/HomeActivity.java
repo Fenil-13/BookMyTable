@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.digitalgenius.bookmytable.R;
 import com.digitalgenius.bookmytable.databinding.ActivityHomeBinding;
 import com.digitalgenius.bookmytable.repository.RestaurantRepository;
+import com.digitalgenius.bookmytable.repository.UserRepository;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -35,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     private void setViewModels() {
         RestaurantViewModelProviderFactory factory=
                 new RestaurantViewModelProviderFactory(getApplication(),
-                        new RestaurantRepository());
+                        new RestaurantRepository(),new UserRepository());
 
         restaurantViewModel= new ViewModelProvider(this,factory).get(RestaurantViewModel.class);
     }
