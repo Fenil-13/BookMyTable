@@ -1,5 +1,7 @@
 package com.digitalgenius.bookmytable.ui.PhoneAuth_A;
 
+import static com.digitalgenius.bookmytable.utils.Constants.BASE_URL;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,6 +35,11 @@ public class PhoneAuthActivity extends AppCompatActivity {
         PhoneAuthViewModelProviderFactory factory = new PhoneAuthViewModelProviderFactory(getApplication(),new UserRepository());
         phoneAuthViewModel = new ViewModelProvider(this, factory).get(PhoneAuthViewModel.class);
 
+        if (getIntent().getStringExtra("Type").equals("Login")) {
+            binding.logInLabel.setText("LOG IN");
+        } else {
+            binding.logInLabel.setText("SIGN UP");
+        }
         setListener();
     }
 
@@ -52,6 +59,7 @@ public class PhoneAuthActivity extends AppCompatActivity {
                     Functions.INSTANCE.hide_progress_dialog();
                     binding.sendOtpLayout.setVisibility(View.GONE);
                     binding.verifyLayout.setVisibility(View.VISIBLE);
+                    binding.textView3.setText("OTP Sent to +91"+binding.etPhoneNumber.getText().toString());
                     break;
                 }
                 case "Failed": {
@@ -120,6 +128,10 @@ public class PhoneAuthActivity extends AppCompatActivity {
                 SharedPrefManager.getInstance(getApplicationContext());
         sharedPrefManager.setStringData("Login","True");
         sharedPrefManager.setUserData(data);
+        String profileLink =
+                BASE_URL + "static/profile_pic/" + data.getUserProfilePic();
+        SharedPrefManager.getInstance(getApplicationContext())
+                .setStringData("user_profile_pic", profileLink);
         goToHomeActivity();
     }
 

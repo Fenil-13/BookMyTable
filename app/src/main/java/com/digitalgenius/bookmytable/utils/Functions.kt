@@ -8,8 +8,10 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import android.widget.Toast
 import cn.pedant.SweetAlert.SweetAlertDialog
-
-
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
 
 
 object Functions {
@@ -39,6 +41,19 @@ object Functions {
         }
 
         pDialog=null
+    }
+     fun prepareFilePart(partName: String, imgFile: File): MultipartBody.Part {
+
+
+        val requestFile: RequestBody = RequestBody.create(
+            "image/jpeg".toMediaTypeOrNull(),
+            imgFile
+        )
+        return MultipartBody.Part.createFormData(partName, imgFile.getName(), requestFile);
+    }
+
+    fun createPartFromString(descriptionString: String): RequestBody {
+        return RequestBody.create(okhttp3.MultipartBody.FORM, descriptionString)
     }
 
 }

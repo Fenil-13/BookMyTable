@@ -1,20 +1,22 @@
 package com.digitalgenius.bookmytable.ui.Home_A
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.digitalgenius.bookmytable.api.models.requests.UserBookingRequest
 import com.digitalgenius.bookmytable.api.models.requests.UserUpdateRequest
-import com.digitalgenius.bookmytable.api.models.responses.FetchRestaurantResponse
-import com.digitalgenius.bookmytable.api.models.responses.FetchUserByIdResponse
-import com.digitalgenius.bookmytable.api.models.responses.GeneralResponse
-import com.digitalgenius.bookmytable.api.models.responses.UserBookingHistoryResponse
+import com.digitalgenius.bookmytable.api.models.responses.*
 import com.digitalgenius.bookmytable.repository.RestaurantRepository
 import com.digitalgenius.bookmytable.repository.UserRepository
 import com.digitalgenius.bookmytable.utils.Constants
+import com.digitalgenius.bookmytable.utils.Constants.Companion.TAG
+import com.digitalgenius.bookmytable.utils.Functions
 import com.digitalgenius.bookmytable.utils.Resource
 import kotlinx.coroutines.launch
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import java.io.IOException
 
@@ -33,6 +35,10 @@ class RestaurantViewModel(
         MutableLiveData()
 
     val fetchUserByIdResponse: MutableLiveData<Resource<FetchUserByIdResponse>> =
+        MutableLiveData()
+
+
+    val uploadProfilePicResponse: MutableLiveData<Resource<UploadProfilePicResponse>> =
         MutableLiveData()
 
     init {
@@ -155,6 +161,41 @@ class RestaurantViewModel(
                     return Resource.Error(resultResponse.status)
                 }
 
+            }
+        }
+        return Resource.Error(response.message())
+    }
+
+fun uploadPic(user_id: RequestBody,
+              picture_type: RequestBody,
+              picture_file:  MultipartBody.Part) = viewModelScope.launch {
+    safeUploadPicCall(user_id,picture_type, picture_file)
+    }
+
+    private suspend fun safeUploadPicCall(user_id: RequestBody,
+                                          picture_type: RequestBody,
+                                          picture_file:  MultipartBody.Part) {
+        uploadProfilePicResponse.postValue(Resource.Loading())
+        try {
+            Log.d(TAG, "safeUploadPicCall: "+picture_file)
+            val response = userRepository.uploadPic(user_id,picture_type, picture_file)
+            Log.d(TAG, "safeUploadPicCall: "+response)
+            uploadProfilePicResponse.postValue(handleUploadPicResponse(response))
+        } catch (t: Throwable) {
+            Log.d(TAG, "safeUploadPicCall: "+t.message)
+            when (t) {
+                is IOException -> uploadProfilePicResponse.postValue(Resource.Error("Network Failure"))
+                else -> uploadProfilePicResponse.postValue(Resource.Error("Conversion Error"))
+            }
+        }
+    }
+
+
+    private fun handleUploadPicResponse(response: Response<UploadProfilePicResponse>):
+            Resource<UploadProfilePicResponse>? {
+        if (response.isSuccessful) {
+            response.body()?.let { resultResponse ->
+                return Resource.Success(resultResponse)
             }
         }
         return Resource.Error(response.message())

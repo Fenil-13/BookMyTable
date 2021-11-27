@@ -1,11 +1,11 @@
 package com.digitalgenius.api
 
 import com.digitalgenius.api.services.BMTAPI
+import com.digitalgenius.bookmytable.utils.Constants.Companion.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object BMTClient {
-    val BASE_URL="http://192.168.0.106:5000/"
     val retrofitBuilder = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())

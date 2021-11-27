@@ -2,6 +2,9 @@ package com.digitalgenius.bookmytable.repository
 
 import com.digitalgenius.api.BMTClient
 import com.digitalgenius.bookmytable.api.models.requests.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.Part
 
 class RestaurantRepository {
     suspend fun getAllRestaurant()=
@@ -38,4 +41,12 @@ class RestaurantRepository {
 
     suspend fun updateRestaurant(updateRestaurantRequest: UpdateRestaurantRequest)=
         BMTClient.publicApi.updateRestaurant(updateRestaurantRequest);
+
+    suspend fun uploadRestaurantPics(restaurant_id: RequestBody,
+                                     picture_type: RequestBody,
+                                     pic1 : MultipartBody.Part,
+                                     pic2 : MultipartBody.Part,
+                                     pic3 : MultipartBody.Part,
+                                     pic4 : MultipartBody.Part)=
+        BMTClient.publicApi.uploadRestaurantPics(restaurant_id,picture_type,pic1, pic2, pic3, pic4);
 }

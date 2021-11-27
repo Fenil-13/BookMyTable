@@ -1,6 +1,9 @@
 package com.digitalgenius.bookmytable.ui.Home_A.RestaurantDetails_F;
 
+import static com.digitalgenius.bookmytable.utils.Constants.BASE_URL;
+
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavArgs;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
+import com.digitalgenius.bookmytable.R;
 import com.digitalgenius.bookmytable.api.models.entities.Restaurant;
 import com.digitalgenius.bookmytable.databinding.FragmentRestaurantDetailsBinding;
 import com.digitalgenius.bookmytable.ui.TableBooking_A.TableBookingActivity;
@@ -55,14 +63,15 @@ public class RestaurantDetailsFragment extends Fragment {
         binding.tvUserLocation.setText(restaurant.getRestaurantLocation());
         binding.tvUserEmail.setText(restaurant.getUserEmail());
         binding.tvUsername.setText(restaurant.getUserName());
-//
-//        Glide.with(requireContext())
-//                .load(restaurant.getRestaurantPics().get(0))
-//                .into(binding.ivRestaurantPic);
 
-//        Glide.with(requireContext())
-//                .load(restaurant.getUserProfilePic())
-//                .into(binding.ivRestaurantUserPic);
+        try{
+            String url = BASE_URL + "static/restaurant_profile_pic/" + restaurant.getId() + "_restaurant_profile_pic_" + restaurant.getRestaurantPics().get(0);
+            Glide.with(requireContext()).load(url)
+                    .into(binding.ivRestaurantPic);
+        }catch (Exception e){
+            Glide.with(requireContext()).load(requireContext().getDrawable(R.drawable.dummy))
+                    .into(binding.ivRestaurantPic);
+        }
 
     }
 }

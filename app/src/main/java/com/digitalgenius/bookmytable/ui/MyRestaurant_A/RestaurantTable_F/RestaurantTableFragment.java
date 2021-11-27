@@ -69,6 +69,8 @@ public class RestaurantTableFragment extends Fragment {
         );
 
 
+
+
     }
 
     private void setListener() {
@@ -84,7 +86,6 @@ public class RestaurantTableFragment extends Fragment {
 
                     }
                 });
-
         binding.btnAddTable.setOnClickListener((v) -> {
             NavHostFragment.findNavController(RestaurantTableFragment.this)
                     .navigate(R.id.action_restaurantTableFragment_to_addTableFragment);

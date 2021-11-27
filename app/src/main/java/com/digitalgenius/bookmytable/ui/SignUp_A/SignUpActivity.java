@@ -1,5 +1,7 @@
 package com.digitalgenius.bookmytable.ui.SignUp_A;
 
+import static com.digitalgenius.bookmytable.utils.Constants.BASE_URL;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -87,6 +89,11 @@ public class SignUpActivity extends AppCompatActivity {
                 SharedPrefManager.getInstance(getApplicationContext());
         sharedPrefManager.setStringData("Login","True");
         sharedPrefManager.setUserData(data);
+        String profileLink =
+                BASE_URL + "static/profile_pic/" + data.getUserProfilePic();
+
+        SharedPrefManager.getInstance(getApplicationContext())
+                .setStringData("user_profile_pic", profileLink);
         goToHomeActivity();
     }
 

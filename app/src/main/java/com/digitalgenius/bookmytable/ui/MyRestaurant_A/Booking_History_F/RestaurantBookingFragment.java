@@ -70,6 +70,7 @@ public class RestaurantBookingFragment extends Fragment {
                 (response)->{
                     if (response instanceof Resource.Success) {
                         Functions.INSTANCE.hide_progress_dialog();
+                        getActivity().onBackPressed();
                     } else if (response instanceof Resource.Error) {
                         Functions.INSTANCE.hide_progress_dialog();
                         Functions.INSTANCE.show_long_toast(requireContext(), response.getMessage());

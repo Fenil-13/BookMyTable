@@ -12,6 +12,8 @@ import com.digitalgenius.bookmytable.utils.Constants
 import com.digitalgenius.bookmytable.utils.Constants.Companion.TAG
 import com.digitalgenius.bookmytable.utils.Resource
 import kotlinx.coroutines.launch
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import java.io.IOException
 
@@ -39,6 +41,10 @@ class MyRestaurantViewModel(app: Application, val restaurantRepository: Restaura
         MutableLiveData()
 
     val updateRestaurantResponse: MutableLiveData<Resource<GeneralResponse>> =
+        MutableLiveData()
+
+
+    val uploadRestaurantPicResponse: MutableLiveData<Resource<UploadRestaurantPicResponse>> =
         MutableLiveData()
 
     init {
@@ -264,6 +270,48 @@ class MyRestaurantViewModel(app: Application, val restaurantRepository: Restaura
     }
 
     private fun handleUpdateRestaurantResponse(response: Response<GeneralResponse>): Resource<GeneralResponse>? {
+        if (response.isSuccessful) {
+            response.body()?.let { resultResponse ->
+                return Resource.Success(resultResponse)
+            }
+        }
+        return Resource.Error(response.message())
+    }
+
+    fun uploadRestaurantPics(restaurant_id: RequestBody,
+                             picture_type: RequestBody,
+                             pic1 : MultipartBody.Part,
+                             pic2 : MultipartBody.Part,
+                             pic3 : MultipartBody.Part,
+                             pic4 : MultipartBody.Part) =
+        viewModelScope.launch {
+            safeUploadRestaurantPicsCall(restaurant_id,picture_type,pic1, pic2, pic3, pic4)
+        }
+
+    private suspend fun safeUploadRestaurantPicsCall(restaurant_id: RequestBody,
+                                                     picture_type: RequestBody,
+                                                     pic1 : MultipartBody.Part,
+                                                     pic2 : MultipartBody.Part,
+                                                     pic3 : MultipartBody.Part,
+                                                     pic4 : MultipartBody.Part) {
+        uploadRestaurantPicResponse.postValue(Resource.Loading())
+        try {
+            val response =
+                restaurantRepository.uploadRestaurantPics(restaurant_id,picture_type,pic1, pic2, pic3, pic4)
+
+            uploadRestaurantPicResponse.postValue(
+                handleUploadRestaurantPicsResponse(response)
+            )
+        } catch (t: Throwable) {
+            when (t) {
+                is IOException -> uploadRestaurantPicResponse.postValue(Resource.Error("Network Failure"))
+                else -> uploadRestaurantPicResponse.postValue(Resource.Error("Conversion Error"))
+            }
+        }
+
+    }
+
+    private fun handleUploadRestaurantPicsResponse(response: Response<UploadRestaurantPicResponse>): Resource<UploadRestaurantPicResponse>? {
         if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 return Resource.Success(resultResponse)

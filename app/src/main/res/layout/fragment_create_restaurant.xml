@@ -116,6 +116,57 @@
                 android:textSize="@dimen/_13ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivRestaurantPic1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/bg_color_primary_inactive"
+                android:src="@drawable/ic_camera"
+                app:riv_corner_radius="@dimen/_5sdp"
+                android:scaleType="fitCenter"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivRestaurantPic2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/bg_color_primary_inactive"
+                android:src="@drawable/ic_camera"
+                app:riv_corner_radius="@dimen/_5sdp"
+                android:scaleType="fitCenter"/>
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivRestaurantPic3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/bg_color_primary_inactive"
+                android:src="@drawable/ic_camera"
+                app:riv_corner_radius="@dimen/_5sdp"
+                android:scaleType="fitCenter"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivRestaurantPic4"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/bg_color_primary_inactive"
+                android:src="@drawable/ic_camera"
+                app:riv_corner_radius="@dimen/_5sdp"
+                android:scaleType="fitCenter"/>
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_theme_corner"
                 android:hint="@string/restaurant_phone_number"
-                android:inputType="text"
+                android:inputType="number"
                 android:textColor="@android:color/white"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="@dimen/_13ssp" />
@@ -227,6 +278,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@color/colorPrimary"
             android:text="@string/create_restaurant"
             android:textColor="@android:color/black"

@@ -1,5 +1,7 @@
 package com.digitalgenius.bookmytable.ui.MyRestaurant_A.RestaurantProfile_F;
 
+import static com.digitalgenius.bookmytable.utils.Constants.BASE_URL;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.digitalgenius.bookmytable.R;
 import com.digitalgenius.bookmytable.api.models.entities.Restaurant;
 import com.digitalgenius.bookmytable.api.models.responses.UserRestaurantsResponse;
@@ -19,6 +22,7 @@ import com.digitalgenius.bookmytable.databinding.FragmentRestaurantProfileBindin
 import com.digitalgenius.bookmytable.ui.Home_A.Home_F.HomeFragmentDirections;
 import com.digitalgenius.bookmytable.ui.MyRestaurant_A.MyRestaurantActivity;
 import com.digitalgenius.bookmytable.ui.MyRestaurant_A.MyRestaurantViewModel;
+import com.digitalgenius.bookmytable.utils.Constants;
 
 public class RestaurantProfileFragment extends Fragment {
     FragmentRestaurantProfileBinding binding;
@@ -42,10 +46,10 @@ public class RestaurantProfileFragment extends Fragment {
 
     private void setListener() {
         binding.tvEditRestaurant.setOnClickListener((v)->{
-            RestaurantProfileFragmentDirections.ActionRestaurantProfileFragmentToCreateRestaurantFragment direction=RestaurantProfileFragmentDirections.
-                    actionRestaurantProfileFragmentToCreateRestaurantFragment("Edit",restaurant);
+            Constants.Companion.setRestaurantData(restaurant);
             NavHostFragment.findNavController(RestaurantProfileFragment.this)
-                    .navigate(direction);
+                    .navigate(R.id.action_restaurantProfileFragment_to_createRestaurantFragment);
+
         });
     }
 
@@ -61,7 +65,14 @@ public class RestaurantProfileFragment extends Fragment {
         binding.tvRestaurantShortDesc.setText(restaurant.getRestaurantShortDesc());
         binding.tvRestaurantLongDesc.setText(restaurant.getRestaurantLongDesc());
         binding.tvRestaurantNumber.setText(restaurant.getRestaurantContactNumber());
-
+        try{
+            String url = BASE_URL + "static/restaurant_profile_pic/" + restaurant.getId() + "_restaurant_profile_pic_" + restaurant.getRestaurantPics().get(0);
+            Glide.with(requireContext()).load(url)
+                    .into(binding.ivProfilePic);
+        }catch (Exception e){
+            Glide.with(requireContext()).load(requireContext().getDrawable(R.drawable.ic_person))
+                    .into(binding.ivProfilePic);
+        }
 
     }
 }

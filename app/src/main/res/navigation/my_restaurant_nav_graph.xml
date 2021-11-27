@@ -35,14 +35,6 @@
         android:name="com.digitalgenius.bookmytable.ui.MyRestaurant_A.Create_Restaurant_A.CreateRestaurantFragment"
         tools:layout="@layout/fragment_create_restaurant"
         android:label="CreateRestaurantFragment" >
-        <argument
-            android:name="type"
-            app:argType="string"
-            app:nullable="true"/>
-        <argument
-            android:name="restaurantData"
-            app:argType="com.digitalgenius.bookmytable.api.models.entities.Restaurant"
-            app:nullable="true"/>
     </fragment>
     <fragment
         android:id="@+id/addTableFragment"

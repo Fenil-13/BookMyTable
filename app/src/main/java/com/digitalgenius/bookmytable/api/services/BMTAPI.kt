@@ -2,6 +2,8 @@ package com.digitalgenius.api.services
 
 import com.digitalgenius.bookmytable.api.models.requests.*
 import com.digitalgenius.bookmytable.api.models.responses.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -89,5 +91,24 @@ interface BMTAPI {
     @POST("fetch_user_by_id")
     suspend fun fetchUserById(
         @Body userBookingRequest: UserBookingRequest
-    ):Response<FetchUserByIdResponse>
+    ): Response<FetchUserByIdResponse>
+
+    @Multipart
+    @POST("upload_pic")
+    suspend fun uploadPic(
+        @Part("user_id") user_id: RequestBody,
+        @Part("picture_type") picture_type: RequestBody,
+        @Part picture_file : MultipartBody.Part
+    ):Response<UploadProfilePicResponse>
+
+    @Multipart
+    @POST("uplod_restaurant_pics")
+    suspend fun uploadRestaurantPics(
+        @Part("restaurant_id") restaurant_id: RequestBody,
+        @Part("picture_type") picture_type: RequestBody,
+        @Part pic1 : MultipartBody.Part,
+        @Part pic2 : MultipartBody.Part,
+        @Part pic3 : MultipartBody.Part,
+        @Part pic4 : MultipartBody.Part
+    ):Response<UploadRestaurantPicResponse>
 }
