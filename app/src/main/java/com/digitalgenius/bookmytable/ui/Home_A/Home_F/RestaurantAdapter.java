@@ -80,7 +80,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.re
 
     @Override
     public int getItemCount() {
-        return differ.getCurrentList().size();
+            return differ.getCurrentList().size();
     }
 
     public class restaurantViewHolder extends RecyclerView.ViewHolder {

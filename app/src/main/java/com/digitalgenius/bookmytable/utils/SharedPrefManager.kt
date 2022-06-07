@@ -1,67 +1,61 @@
-package com.digitalgenius.bookmytable.utils;
+package com.digitalgenius.bookmytable.utils
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Context
+import android.content.SharedPreferences
+import com.digitalgenius.bookmytable.api.models.entities.UserData
+import com.digitalgenius.bookmytable.utils.SharedPrefManager
 
-import com.digitalgenius.bookmytable.api.models.entities.UserData;
-import com.digitalgenius.bookmytable.api.models.responses.LoginUserResponse;
+class SharedPrefManager internal constructor(private val context: Context) {
+    private val MyPREFERENCES = "MyPREFERENCES"
+    private val sharedPreferences: SharedPreferences
+    private var editor: SharedPreferences.Editor
+    fun setStringData(key: String?, value: String?) {
+        editor = sharedPreferences.edit()
+        editor.putString(key, value)
+        editor.commit()
+    }
 
-public class SharedPrefManager {
-    private String MyPREFERENCES="MyPREFERENCES";
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
-    private Context context;
-    private static SharedPrefManager sharePrefManager ;
+    fun getStringData(key: String?): String? {
+        return sharedPreferences.getString(key, "")
+    }
 
-    public static SharedPrefManager getInstance(Context context){
-        if (sharePrefManager == null) {
-            sharePrefManager = new SharedPrefManager(context);
+    var userData: UserData
+        get() = UserData(
+            sharedPreferences.getString("user_auth_id", "")!!,
+            sharedPreferences.getString("user_device_token", "")!!,
+            sharedPreferences.getString("user_email", "")!!,
+            sharedPreferences.getString("user_id", "")!!,
+            sharedPreferences.getString("user_location", "")!!,
+            sharedPreferences.getString("user_name", "")!!,
+            sharedPreferences.getString("user_phone_number", "")!!,
+            sharedPreferences.getString("user_profile_pic", "")!!
+        )
+        set(data) {
+            editor = sharedPreferences.edit()
+            editor.putString("user_auth_id", data.userAuthId)
+            editor.putString("user_id", data.userId)
+            editor.putString("user_device_token", data.userDeviceToken)
+            editor.putString("user_email", data.userEmail)
+            editor.putString("user_location", data.userLocation)
+            editor.putString("user_name", data.userName)
+            editor.putString("user_phone_number", data.userPhoneNumber)
+            editor.putString("user_profile_pic", data.userProfilePic)
+            editor.commit()
         }
-        return sharePrefManager;
+
+    companion object {
+        private var sharePrefManager: SharedPrefManager? = null
+        @JvmStatic
+        fun getInstance(context: Context): SharedPrefManager? {
+            if (sharePrefManager == null) {
+                sharePrefManager = SharedPrefManager(context)
+            }
+            return sharePrefManager
+        }
     }
 
-    SharedPrefManager(Context context){
-        this.context=context;
-        sharedPreferences=context.getSharedPreferences(MyPREFERENCES,Context.MODE_PRIVATE);
-        editor=sharedPreferences.edit();
-    }
-
-    public void setStringData(String key,String value){
-        editor=sharedPreferences.edit();
-        editor.putString(key,value);
-        editor.commit();
-    }
-
-
-    public String getStringData(String key){
-        return sharedPreferences.getString(key,"");
-    }
-
-
-    public void setUserData(UserData data){
-        editor=sharedPreferences.edit();
-        editor.putString("user_auth_id",data.getUserAuthId());
-        editor.putString("user_id",data.getUserId());
-        editor.putString("user_device_token",data.getUserDeviceToken());
-        editor.putString("user_email",data.getUserEmail());
-        editor.putString("user_location",data.getUserLocation());
-        editor.putString("user_name",data.getUserName());
-        editor.putString("user_phone_number",data.getUserPhoneNumber());
-        editor.putString("user_profile_pic",data.getUserProfilePic());
-        editor.commit();
-    }
-
-
-    public UserData getUserData(){
-       return new UserData(
-               sharedPreferences.getString("user_auth_id",""),
-               sharedPreferences.getString("user_device_token",""),
-               sharedPreferences.getString("user_email",""),
-               sharedPreferences.getString("user_id",""),
-               sharedPreferences.getString("user_location",""),
-               sharedPreferences.getString("user_name",""),
-               sharedPreferences.getString("user_phone_number",""),
-               sharedPreferences.getString("user_profile_pic","")
-       );
+    init {
+        sharedPreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE)
+        editor = sharedPreferences.edit()
     }
 }
